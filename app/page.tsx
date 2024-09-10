@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       <Image
-        src="/assets/images/onboarding-img.png"
+        src="/assets/images/doctor-avatar.png"
         height={1000}
         width={1000}
         alt="patient"
