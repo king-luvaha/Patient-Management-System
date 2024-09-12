@@ -2,8 +2,10 @@ import AppointmentForm from "@/components/forms/AppointmentForm";
 import { getPatient } from "@/lib/actions/patient.actions";
 import Image from "next/image";
 
-export default async function NewAppointment({ params: { userId } }: SearchParamProps) {
-    const patient = await getPatient(userId);
+export default async function NewAppointment({
+  params: { userId },
+}: SearchParamProps) {
+  const patient = await getPatient(userId);
   return (
     <div className="flex h-screen max-h-screen">
       <section className="remove-scrollbar container my-auto">
@@ -16,16 +18,16 @@ export default async function NewAppointment({ params: { userId } }: SearchParam
             className="mb-12 h-10 w-fit"
           />
 
-                  <AppointmentForm
+          <AppointmentForm
             type="create"
             userId={userId}
-            patientId={patient.$id} setOpen={function (open: boolean): void {
+            patientId={patient.$id}
+            setOpen={function (open: boolean): void {
               throw new Error("Function not implemented.");
-            } }                  />
+            }}
+          />
 
-          <p className="copyright mt-10 py-12">
-            © 2024 AfyaCare
-          </p>
+          <p className="copyright mt-10 py-12">© 2024 AfyaCare</p>
         </div>
       </section>
 
