@@ -1,8 +1,6 @@
 import AppointmentForm from "@/components/forms/AppointmentForm";
-import PatientForm from "@/components/forms/PatientForm";
 import { getPatient } from "@/lib/actions/patient.actions";
 import Image from "next/image";
-import Link from "next/link";
 
 export default async function NewAppointment({ params: { userId } }: SearchParamProps) {
     const patient = await getPatient(userId);
@@ -19,10 +17,11 @@ export default async function NewAppointment({ params: { userId } }: SearchParam
           />
 
                   <AppointmentForm
-                      type="create"
-                      userId={userId}
-                      patientId={patient.$id}
-                  />
+            type="create"
+            userId={userId}
+            patientId={patient.$id} setOpen={function (open: boolean): void {
+              throw new Error("Function not implemented.");
+            } }                  />
 
           <p className="copyright mt-10 py-12">
             © 2024 AfyaCare
